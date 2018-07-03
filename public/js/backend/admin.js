@@ -488,10 +488,10 @@ var Backend = {}; // common variable used in all the files of the backend
             addHandlers: function () {
                 var context = this;
                 var formName = "_add_custom_url_form";
-
+                var selectors = this.selectors;
                 this.selectors.menuItemContainer.nestable({
                     callback: function (l, e) {
-                        this.selectors.menuItemsData.val(JSON.stringify($(l).nestable('serialise')));
+                        selectors.menuItemsData.val(JSON.stringify($(l).nestable('serialise')));
                     },
                     json: this.selectors.menuItemsData.val(),
                     includeContent: true,
